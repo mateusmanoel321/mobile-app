@@ -1,11 +1,43 @@
 import { StatusBar } from "expo-status-bar";
 import { Text, View } from "react-native";
 
-export default function App() {
+const HomeScreen = () => {
   return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text>teste</Text>
-      <StatusBar style="auto" />
+    <View style={styles.container}>
+      <Text style={styles.headerText}>{"\n\n"}O que você gostaria de ler?</Text>
+      <View style={styles.searchContainer}>
+        <TextInput
+          style={styles.searchInput}
+          placeholder="Procurar"
+          placeholderTextColor="#B4B6B9"
+        />
+        <Ionicons
+          name="search"
+          size={24}
+          color="#B4B6B9"
+          style={styles.searchIcon}
+        />
+      </View>
+      <View style={styles.bookContainer}>
+        <View style={[styles.book, styles.marginLeft34]}>
+          <Image
+            source={require("./assets/images/images.jpg")}
+            style={styles.bookImage}
+          />
+          <Text style={styles.bookNumber}>1</Text>
+        </View>
+        <View style={[styles.book, styles.marginLeft31]}>
+          <Image
+            source={require("./assets/images/download.jpg")}
+            style={styles.bookImage}
+          />
+          <Text style={styles.bookNumber}>2</Text>
+        </View>
+        <View style={[styles.book, styles.marginLeft27]}>
+          {/* Adicione a terceira imagem aqui */}
+          <Text style={styles.bookNumber}>3</Text>
+        </View>
+      </View>
     </View>
   );
-}
+};
